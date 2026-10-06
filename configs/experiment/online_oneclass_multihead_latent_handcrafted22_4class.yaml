@@ -1,0 +1,18 @@
+# @package _global_
+
+defaults:
+  - online_oneclass_multihead_latent_plugin_4class
+  - override /backbone: handcrafted22
+  - _self_
+
+paths:
+  output_dir: ${paths.root_dir}/outputs/latent_4class_1000_1600_handcrafted22
+
+model:
+  in_channels: 3
+
+datamodule:
+  config:
+    feature_bundle_path: ${backbone.bundle_path}
+    channel_indices: [0, 1, 2]
+    normalization: bundle

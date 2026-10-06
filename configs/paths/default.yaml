@@ -1,0 +1,3 @@
+root_dir: C:/github_project/motor_anomaly_classification/motor_anomaly_classification
+output_dir: ${paths.root_dir}/outputs
+data_dir: ${paths.root_dir}/../Balanced_by_speed_and_classes

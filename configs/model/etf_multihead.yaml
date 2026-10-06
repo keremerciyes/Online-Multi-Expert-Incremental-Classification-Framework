@@ -1,0 +1,5 @@
+mode: etf_multi_head
+in_channels: 2
+num_classes: 3
+backbone: ${backbone}
+head: ${head}

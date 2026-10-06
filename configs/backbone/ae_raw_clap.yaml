@@ -1,0 +1,6 @@
+# Frozen conv1d autoencoder encoder distilled from the CLAP design.
+# Emits an [B, 8, T'] feature map for conv/linear projector heads.
+_target_: motor_anomaly_classification.models.feature_extractors.BundleEncoderBackbone
+bundle_path: C:/github_project/motor_anomaly_classification/Avalanche_Models/feature_extractor_comparison/deployable/ae_raw_clap.pt
+freeze: true
+load_pretrained: true

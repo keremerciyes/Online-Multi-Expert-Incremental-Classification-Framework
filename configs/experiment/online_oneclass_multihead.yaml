@@ -1,0 +1,12 @@
+# @package _global_
+
+defaults:
+  - override /model: oneclass_multihead
+  - override /head: one_class_cosine_head_conv_projector
+  - override /system: online_oneclass_multihead
+  - override /datamodule: online_oneclass_multihead
+  - override /trainer: online
+  - override /callbacks: online
+
+experiment:
+  name: online_oneclass_multihead

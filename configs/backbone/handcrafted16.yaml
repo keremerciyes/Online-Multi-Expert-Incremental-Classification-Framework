@@ -1,0 +1,8 @@
+# Handcrafted 16-d physical vibration descriptors (speed-aware, order-domain).
+# Vectors are precomputed in the datamodule; this backbone is an identity pass-through.
+# Requires: oneclass.feature_bundle_path pointed at the same bundle so the
+# datamodule standardizes and precomputes the 16-d features per window.
+_target_: motor_anomaly_classification.models.feature_extractors.PrecomputedFeatureBackbone
+bundle_path: C:/github_project/motor_anomaly_classification/Avalanche_Models/feature_extractor_comparison/deployable/handcrafted16.pt
+freeze: true
+load_pretrained: true

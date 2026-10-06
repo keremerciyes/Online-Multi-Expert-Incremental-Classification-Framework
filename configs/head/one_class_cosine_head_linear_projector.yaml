@@ -1,0 +1,17 @@
+_target_: motor_anomaly_classification.models.head.OneClassCosineHeadLinearProjector
+num_classes: 1
+projector_dim: 16
+scale: 15.0
+distance_weight: 1.0
+threshold_std_multiplier: 1.0
+stats_momentum: 0.1
+boundary_radius: 0.2
+projector_bias: false
+voting_calibration_mode: mahalanobis
+cov_shrinkage: 0.1
+mahalanobis_confidence: 0.95
+
+selected_classes:
+  - belt
+  - magnetic
+  - vibration

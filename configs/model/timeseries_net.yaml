@@ -1,0 +1,4 @@
+in_channels: 2
+num_classes: 4
+backbone: ${backbone}
+head: ${head}

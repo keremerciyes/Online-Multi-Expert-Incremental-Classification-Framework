@@ -1,0 +1,26 @@
+_target_: motor_anomaly_classification.systems.online_oneclass_module.OnlineOneClassMultiHeadModule
+training_config:
+  _target_: motor_anomaly_classification.systems.online_oneclass_module.OneClassTrainingConfig
+  assume_single_class_batches: true
+  pretrained_backbone_checkpoint_path: ${oneclass.pretrained_backbone_checkpoint_path}
+  freeze_inactive_heads: true
+  use_alignment_loss: true
+  use_boundary_loss: true
+  use_old_contrast_loss: true
+  use_replay_negative_suppression_loss: true
+  alignment_weight: 1.0
+  boundary_weight: 0.7
+  old_contrast_weight: 0.4
+  replay_negative_suppression_weight: 0.3
+  old_contrast_margin: 0.2
+  replay_negative_margin: 0.0
+  replay_buffer_size_per_class: 32
+  replay_batch_size_per_class: 4
+  min_replay_samples_per_class: 16
+  use_hard_negative_mining: true
+  hard_negative_pool_multiplier: 4
+  init_feature_standardization: true
+  use_uncertainty_weighting: false
+  contrast_score_mode: calibrated
+  use_raw_scores_for_training: true
+  log_threshold_metrics: true

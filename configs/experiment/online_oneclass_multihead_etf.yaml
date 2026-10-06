@@ -1,0 +1,12 @@
+# @package _global_
+
+defaults:
+  - override /model: etf_multihead
+  - override /head: etf_head
+  - override /system: online_etf_multihead
+  - override /datamodule: online_oneclass_multihead
+  - override /trainer: online
+  - override /callbacks: online
+
+experiment:
+  name: online_oneclass_multihead_etf

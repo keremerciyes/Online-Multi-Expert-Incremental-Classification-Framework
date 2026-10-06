@@ -1,0 +1,11 @@
+_target_: lightning.pytorch.Trainer
+default_root_dir: ${paths.output_dir}
+max_epochs: 15
+accelerator: auto
+devices: 1
+enable_checkpointing: true
+log_every_n_steps: 1
+deterministic: true
+enable_model_summary: true
+logger: ${logging}
+

@@ -1,0 +1,7 @@
+_target_: lightning.pytorch.loggers.WandbLogger
+save_dir: ${paths.output_dir}
+project: motor-anomaly-classification
+name: ${experiment.name}
+log_model: false
+offline: false
+anonymous: never

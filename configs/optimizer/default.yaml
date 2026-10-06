@@ -1,0 +1,5 @@
+optimizer_name: sgd
+learning_rate_head: 0.001
+backbone_lr_divisor: 5.0
+momentum: 0.9
+weight_decay: 0.0001

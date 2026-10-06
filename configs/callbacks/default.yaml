@@ -1,0 +1,14 @@
+dataset_inspection:
+  _target_: motor_anomaly_classification.systems.callbacks.DatasetInspectionCallback
+  print_summary: true
+  print_mapping: true
+
+confusion_matrix:
+  _target_: motor_anomaly_classification.systems.callbacks.ConfusionMatrixCallback
+  output_name: confusion_matrix.png
+
+classification_report:
+  _target_: motor_anomaly_classification.systems.callbacks.ClassificationReportCallback
+  output_name: classification_report.json
+
+selected_windows: null

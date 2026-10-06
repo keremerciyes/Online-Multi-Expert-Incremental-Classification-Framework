@@ -1,0 +1,20 @@
+defaults:
+  - default
+
+online_batch_loss:
+  _target_: motor_anomaly_classification.systems.callbacks.OnlineBatchLossPlotCallback
+  output_name: online_batch_loss.png
+
+per_head_score_diagnostics:
+  _target_: motor_anomaly_classification.systems.callbacks.PerHeadScoreDiagnosticsCallback
+  output_name: per_head_score_diagnostics.json
+  plot_name: per_head_scores.png
+  margin_plot_name: score_margins.png
+
+speed_accuracy_plot:
+  _target_: motor_anomaly_classification.systems.callbacks.SpeedAccuracyPlotCallback
+  output_name: per_speed_accuracy.png
+
+eval_batch_loss:
+  _target_: motor_anomaly_classification.systems.callbacks.EvalBatchLossPlotCallback
+  output_name: eval_batch_loss.png

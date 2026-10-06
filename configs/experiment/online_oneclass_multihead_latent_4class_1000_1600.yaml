@@ -1,0 +1,55 @@
+# @package _global_
+
+defaults:
+  - online_oneclass_multihead_latent
+  - _self_
+
+paths:
+  output_dir: ${paths.root_dir}/outputs/latent_4class_1000_1600_requested
+
+datamodule:
+  config:
+    selected_classes: [normal, belt, magnetic, vibration]
+    selected_speeds: ["1000", "1200", "1400", "1600"]
+
+model:
+  num_classes: 4
+
+head:
+  selected_classes: [normal, belt, magnetic, vibration]
+  projector_dim: 16
+  scale: 20.0
+  boundary_radius: 0.3
+  threshold_std_multiplier: 1.0
+  stats_momentum: 0.1
+  eps: 1.0e-6
+  voting_calibration_mode: zscore
+  cov_shrinkage: 0.5
+  mahalanobis_confidence: 0.90
+
+system:
+  training_config:
+    use_alignment_loss: true
+    use_boundary_loss: true
+    use_old_contrast_loss: true
+    use_replay_negative_suppression_loss: true
+    alignment_weight: 1.0
+    boundary_weight: 0.65
+    old_contrast_weight: 0.7
+    replay_negative_suppression_weight: 0.8
+    old_contrast_margin: 0.10
+    replay_negative_margin: 0.10
+    replay_buffer_size_per_class: 24
+    replay_pool_samples_per_class: 12
+    replay_batch_size: 12
+    feature_std_warmup: 200
+
+optimizer:
+  optimizer_name: sgd
+  learning_rate_head: 0.001
+  momentum: 0.9
+  weight_decay: 0.0001
+
+trainer:
+  max_epochs: 15
+  enable_progress_bar: false

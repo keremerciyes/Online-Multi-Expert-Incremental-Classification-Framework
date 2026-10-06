@@ -1,0 +1,22 @@
+_target_: motor_anomaly_classification.data.datamodule_offline.OfflineTimeSeriesDataModule
+config:
+  _target_: motor_anomaly_classification.data.datamodule_offline.OfflineDataConfig
+  dataset_dir: ${paths.data_dir}
+  channel_indices:
+    - 0
+    - 1
+  # - 2
+  selected_classes:
+    - belt
+    - magnetic
+    - vibration
+  seed: ${seed}
+  test_ratio: 0.15
+  val_ratio: 0.15
+  n_folds: 5
+  train_batch_size: 16
+  eval_batch_size: 16
+  num_workers: 0
+  persistent_workers: false
+use_cross_val: false
+fold_index: 0

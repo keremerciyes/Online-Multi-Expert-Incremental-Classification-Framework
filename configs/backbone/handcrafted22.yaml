@@ -1,0 +1,4 @@
+_target_: motor_anomaly_classification.models.feature_extractors.PrecomputedFeatureBackbone
+bundle_path: ${paths.root_dir}/../Avalanche_Models/feature_extractor_comparison_final_handcrafted22/deployable/handcrafted22.pt
+freeze: true
+load_pretrained: true

@@ -1,0 +1,5 @@
+projector_arch: cosine
+embedding_dim: 16
+projector_channels: 8
+scale: 15.0
+projector_bias: false

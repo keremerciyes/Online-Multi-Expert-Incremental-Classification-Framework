@@ -1,0 +1,28 @@
+_target_: motor_anomaly_classification.data.datamodule_multihead.MultiHeadSequentialDataModule
+config:
+  _target_: motor_anomaly_classification.data.datamodule_multihead.MultiHeadSequentialDataConfig
+  class_paths:
+    normal: ${paths.data_dir}/normal
+    belt: ${paths.data_dir}/belt
+    magnetic: ${paths.data_dir}/magnetic
+    vibration: ${paths.data_dir}/vibration
+  selected_classes:
+    - magnetic
+    - vibration
+    - belt
+  selected_speeds:
+    - "1000"
+    - "1200"
+    - "1400"
+    - "1600"
+  channel_indices:
+    - 0
+    - 1
+    # - 2
+  feature_bundle_path: ${oneclass.feature_bundle_path}
+  seed: ${seed}
+  train_ratio: 0.9
+  train_batch_size: 16
+  eval_batch_size: 16
+  num_workers: 0
+  persistent_workers: false
