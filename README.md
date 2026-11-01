@@ -11,6 +11,3 @@ See the full usage guide in USER_MANUAL.md.
 - Online sequential fine-tuning
 - Staged offline-then-online workflow
 - Grouped backbone/head architecture with a shared Conv1D + cosine-classifier baseline
-
-Replay and EWC are not part of the current code path.
-
